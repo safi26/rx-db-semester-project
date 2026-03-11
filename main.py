@@ -148,13 +148,14 @@ def generate_orders_for_people(persons, min_orders=1, max_orders=3):
     return orders
 
 if __name__ == "__main__":
-    # main(out_csv="people.csv", num_people=30_000, max_workers=64)
+    Faker.seed(4321)
+    main(out_csv="people.csv", num_people=100, max_workers=64)
 
-    persons = ['Dave', 'Person 2']
-    orders = generate_orders_for_people(persons)
-
-    for o in orders[:3]:
-        print(o)
+    # persons = ['Dave', 'Person 2']
+    # orders = generate_orders_for_people(persons)
+    #
+    # for o in orders[:3]:
+    #     print(o)
 # Press the green button in the gutter to run the script.
 # if __name__ == '__main__':
 #     print_hi('PyCharm')

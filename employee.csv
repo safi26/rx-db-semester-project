@@ -1,0 +1,36 @@
+employee_id,first_name,last_name,email,phone,role,hire_date
+1,Christine,Morris,christine_morris@yahoo.com,941-308-4791x795,Cashier,2026-01-20
+2,James,Wilkinson,jamesw@yahoo.com,238-968-8281,Pharmacist,2019-09-10
+3,Alisha,Rodgers,alishar@gmail.com,001-409-668-8899x9935,Senior Pharmacist,2023-07-27
+4,Dustin,Weaver,dustinw@gmail.com,+1-210-858-5161x964,Store Manager,2022-05-20
+5,David,Taylor,dtaylor@example.com,2584366682,Store Manager,2018-04-03
+6,Harold,Oliver,haroldo@yahoo.com,+1-330-297-9730x13330,Cashier,2017-08-27
+7,Cynthia,Barnes,cynthia.barnes4@yahoo.com,(884)406-7785x201,Pharmacy Technician,2020-02-23
+8,Sandra,Vazquez,svazquez@outlook.com,+1-512-893-0887x7543,Pharmacy Technician,2023-12-27
+9,Sheryl,Mercer,sheryl.mercer@outlook.com,001-375-987-7943x921,Cashier,2020-10-13
+10,Cheryl,Holden,cherylh@example.com,001-734-596-4992x99129,Pharmacy Technician,2023-01-20
+11,Richard,Brown,richardbrown@yahoo.com,2532889326,Cashier,2018-05-07
+12,Jason,Robinson,jason_robinson@example.com,001-987-838-9905x7497,Senior Pharmacist,2017-08-28
+13,Patricia,Jackson,patricia_jackson@example.com,+1-734-384-2199,Store Manager,2022-07-22
+14,Robert,Gomez,robert.gomez2@example.com,+1-514-489-6117,Pharmacy Technician,2019-02-19
+15,Paul,Gonzales,paul_gonzales@yahoo.com,514.857.3963,Pharmacist,2017-01-03
+16,Samantha,Ward,sward@outlook.com,732-396-1319x9223,Senior Pharmacist,2019-02-09
+17,Kim,Ellis,kim.ellis44@example.com,+1-429-353-3951x709,Senior Pharmacist,2023-01-15
+18,Sarah,Rowe,sarahr@outlook.com,(878)639-2439x482,Senior Pharmacist,2018-08-15
+19,Brittany,Robertson,brittanyrobertson@gmail.com,873.377.3843x82551,Senior Pharmacist,2019-09-03
+20,Cassie,Garcia,cassie_garcia@yahoo.com,(840)306-3216x4674,Pharmacist,2016-05-08
+21,Kimberly,Lopez,kimberly.lopez99@example.com,487-855-8147x86994,Cashier,2016-03-11
+22,Tanner,Vance,tannerv@yahoo.com,779-270-1217,Senior Pharmacist,2018-10-13
+23,Michael,Carpenter,michael_carpenter@gmail.com,458.701.6337x53250,Pharmacy Technician,2020-01-16
+24,Faith,Bowers,faith.bowers@outlook.com,(943)675-8616x81966,Cashier,2019-04-06
+25,Brandon,Martin,brandonm@gmail.com,+1-361-633-8233x2007,Cashier,2024-04-01
+26,Julie,Rogers,julier@yahoo.com,677.909.5969x062,Senior Pharmacist,2025-07-06
+27,Joseph,Rodriguez,josephr@example.com,974-485-3913,Cashier,2022-10-30
+28,Michael,Mendoza,michaelm@outlook.com,465-989-4531x388,Pharmacist,2025-07-19
+29,Kenneth,Castaneda,kcastaneda@yahoo.com,815-845-3883x162,Pharmacy Technician,2022-05-11
+30,Allison,Hernandez,allisonhernandez@gmail.com,821-219-8372,Pharmacy Technician,2021-02-06
+31,Tim,Stewart,tstewart@outlook.com,637.638.6562,Pharmacist,2016-12-10
+32,Christopher,Sims,christopher.sims95@example.com,001-251-682-0297x30241,Store Manager,2024-12-14
+33,Jeremy,Carter,jeremycarter@gmail.com,(296)758-2377x115,Pharmacist,2017-10-27
+34,Frederick,Ellis,frederickellis@yahoo.com,(666)561-2234x1701,Pharmacist,2018-06-11
+35,Benjamin,Johnson,benjamin.johnson@outlook.com,351-525-3384x2307,Senior Pharmacist,2019-09-28
