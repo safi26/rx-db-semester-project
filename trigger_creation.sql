@@ -173,8 +173,8 @@ FLUSH PRIVILEGES;
 
 CREATE VIEW customers_masked AS
 SELECT
-    id,
-    name,
+    customer_id,
+    first_name,
     CONCAT('XXX-XXX-', RIGHT(phone, 4)) AS phone
 FROM Customer;
 

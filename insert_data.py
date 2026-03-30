@@ -6,14 +6,23 @@ from pprint import pprint
 
 BULK_CREATE_BATCH_SIZE = 5_000
 
-def get_conn():
-    conn = mysql.connector.connect(
-        host="192.168.1.179",
-        port=3306,
-        user="root",
-        password="example",
-        database="Pharmacydb"
-    )
+def get_conn(database="Pharmacydb"):
+    if database=="Pharmacydb":
+        conn = mysql.connector.connect(
+            host="192.168.1.179",
+            port=3306,
+            user="root",
+            password="example",
+            database="Pharmacydb"
+        )
+    else:
+        print("Returning conn without Database")
+        conn = mysql.connector.connect(
+            host="192.168.1.179",
+            port=3306,
+            user="root",
+            password="example",
+        )
     # conn = mysql.connector.connect(
     #     host="localhost",
     #     port=3326,
@@ -25,23 +34,40 @@ def get_conn():
 
 def recreate_db():
     print("recreating database...")
-
-    conn = get_conn()
-    cursor = conn.cursor()
-
-    with open("forward_engineered.sql", "r") as f:
-        sql_script = f.read().split(';')
-
-    # print(sql_script)
     try:
-        for q in sql_script:
-            if q.startswith("--"):
-                continue
-            if q.strip() != '':
-                cursor.execute(q)
-    except Exception as e:
-        print(e)
-        print(q)
+        conn = get_conn()
+        cursor = conn.cursor()
+
+        with open("forward_engineered.sql", "r") as f:
+            sql_script = f.read().split(';')
+
+        # print(sql_script)
+        try:
+            for q in sql_script:
+                if q.startswith("--"):
+                    continue
+                if q.strip() != '':
+                    cursor.execute(q)
+        except Exception as e:
+            print(e)
+            print(q)
+    except:
+        conn = get_conn(database='noDB')
+        cursor = conn.cursor()
+
+        with open("forward_engineered.sql", "r") as f:
+            sql_script = f.read().split(';')
+
+        # print(sql_script)
+        try:
+            for q in sql_script:
+                if q.startswith("--"):
+                    continue
+                if q.strip() != '':
+                    cursor.execute(q)
+        except Exception as e:
+            print(e)
+            print(q)
     conn.commit()
     cursor.close()
     conn.close()
