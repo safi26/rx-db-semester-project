@@ -87,7 +87,7 @@ def generate_customers(fake: Faker, count: int) -> list[dict[str, str]]:
     customers: list[dict[str, str]] = []
 
     for customer_id in range(1, count + 1):
-        birthdate = fake.date_of_birth(minimum_age=18, maximum_age=85)
+        birthdate = fake.date_of_birth(minimum_age=18, maximum_age=85).strftime('%Y-%m-%d')
         first_name = fake.first_name()
         last_name = fake.last_name()
         customers.append(
@@ -97,12 +97,13 @@ def generate_customers(fake: Faker, count: int) -> list[dict[str, str]]:
                 "last_name": last_name,
                 # "email": fake.unique.email(),
                 "email" : generate_email(first_name, last_name),
-                "phone": fake.phone_number(),
+                # "phone": fake.phone_number(),
+                "phone": fake.msisdn()[3:],
                 "street": fake.street_address(),
                 "city": fake.city(),
                 "state": fake.state_abbr(),
                 "zip": fake.postcode(),
-                "birthdate": birthdate.isoformat(),
+                "birthdate": birthdate,
             }
         )
 
@@ -122,7 +123,7 @@ def generate_employees(fake: Faker, count: int) -> list[dict[str, str]]:
                 "first_name": first_name,
                 "last_name": last_name,
                 "email": generate_email(first_name, last_name),
-                "phone": fake.phone_number(),
+                "phone": fake.msisdn()[3:],
                 "role": random.choice(EMPLOYEE_ROLES),
                 "hire_date": hire_date.isoformat(),
             }
@@ -206,9 +207,9 @@ def build_orders_and_sales(
                     {
                         "prescription_item_id": next_prescription_item_id,
                         "prescription_id": prescription_id,
-                        "product_id": product.product_id,
-                        "product_name": product.name,
-                        "packaging": product.packaging,
+                        "drug_id": product.product_id,
+                        # "product_name": product.name,
+                        # "packaging": product.packaging,
                         "prescribed_quantity": prescribed_quantity,
                     }
                 )
@@ -224,13 +225,13 @@ def build_orders_and_sales(
                         "sale_id": next_sale_id,
                         "order_id": order_id,
                         "customer_id": customer["customer_id"],
-                        "product_id": product.product_id,
-                        "product_name": product.name,
-                        "packaging": product.packaging,
+                        "drug_id": product.product_id,
+                        # "product_name": product.name,
+                        # "packaging": product.packaging,
                         "quantity": quantity,
                         "unit_price": f"{unit_price:.2f}",
                         "line_total": f"{line_total:.2f}",
-                        "discount_percentage": product.discount_percentage,
+                        # "discount_percentage": product.discount_percentage,
                         "sale_date": order_date.date().isoformat(),
                     }
                 )
@@ -246,7 +247,7 @@ def build_orders_and_sales(
                     "order_id": order_id,
                     "customer_id": customer["customer_id"],
                     "employee_id": employee["employee_id"],
-                    "employee_name": f"{employee['first_name']} {employee['last_name']}",
+                    # "employee_name": f"{employee['first_name']} {employee['last_name']}",
                     "prescription_id": prescription_id,
                     "order_date": order_date.isoformat(sep=" ", timespec="seconds"),
                     "status": status,
@@ -314,7 +315,7 @@ def main(customer_count: int = 2500, employee_count: int = 35, seed: int = 4321)
             "order_id",
             "customer_id",
             "employee_id",
-            "employee_name",
+            # "employee_name",
             "prescription_id",
             "order_date",
             "status",
@@ -333,13 +334,13 @@ def main(customer_count: int = 2500, employee_count: int = 35, seed: int = 4321)
             "sale_id",
             "order_id",
             "customer_id",
-            "product_id",
-            "product_name",
-            "packaging",
+            "drug_id",
+            # "product_name",
+            # "packaging",
             "quantity",
             "unit_price",
             "line_total",
-            "discount_percentage",
+            # "discount_percentage",
             "sale_date",
         ],
         sales,
@@ -361,9 +362,10 @@ def main(customer_count: int = 2500, employee_count: int = 35, seed: int = 4321)
         [
             "prescription_item_id",
             "prescription_id",
-            "product_id",
-            "product_name",
-            "packaging",
+            # "product_id",
+            "drug_id",
+            # "product_name",
+            # "packaging",
             "prescribed_quantity",
         ],
         prescription_items,
