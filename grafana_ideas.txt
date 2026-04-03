@@ -1,0 +1,24 @@
+grafana chart ideas
+    1- sale trend of drugs (sales trend)
+    2- numbers of order per day
+    3- average age of customers
+    4- most bought drugs
+    5- forecast drug trend (stock trends) -> notify
+
+masked View
+
+Architecture
+    1- synchronous
+    2- diagram
+    3- aws deployment behind a LB
+
+
+DB backup (cron to s3)
+
+**No Partitioning**
+
+orders -> created, completed, cancelled
+
+
+
+
